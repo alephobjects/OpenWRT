@@ -32,7 +32,7 @@ define Build/Compile
 	)
 endef
 
-define Package/python-psutil/install
+define Package/python-netifaces/install
 	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
 	$(CP) \
 		$(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
