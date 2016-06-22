@@ -1,11 +1,12 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-psutil
-PKG_VERSION:=1.0.1
+PKG_NAME:=psutil
+# PKG_VERSION:=1.0.1
+PKG_VERSION:=3.2.1
 PKG_RELEASE:=1
 
 PKG_SOURCE:=psutil-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://psutil.googlecode.com/files/
+PKG_SOURCE_URL:=https://pypi.python.org/packages/source/p/psutil/
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_BUILD_DEPENDS:=python
