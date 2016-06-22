@@ -7,7 +7,7 @@ PKG_RELEASE:=1
 PKG_SOURCE:=release_0_10_0.tar.gz
 PKG_SOURCE_URL:=https://bitbucket.org/al45tair/netifaces/get/
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
+PKG_BUILD_DIR:=$(BUILD_DIR)/al45tair-netifaces-6030c12264f1
 PKG_BUILD_DEPENDS:=python
 
 include $(INCLUDE_DIR)/package.mk
