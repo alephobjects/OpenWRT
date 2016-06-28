@@ -148,6 +148,12 @@ define Package/base-files/install
 		$(1)/etc/preinit \
 		$(1)/etc/profile
 
+	$(SED) "s#%PYTHONPATH%#$(TARGET_PYTHON_PATH)#g" \
+		$(1)/etc/profile
+
+	$(SED) "s#%LDLIBRARYPATH%#$(TARGET_LDLIB_PATH)#g" \
+		$(1)/etc/profile
+
 	mkdir -p $(1)/CONTROL
 	mkdir -p $(1)/dev
 	mkdir -p $(1)/etc/crontabs

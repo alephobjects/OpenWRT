@@ -7,6 +7,8 @@ fgrep -sq '/ overlay ro,' /proc/mounts && {
 }
 
 export PATH="%PATH%"
+export PYTHONPATH="%PYTHONPATH%"
+export LD_LIBRARY_PATH="%LDLIBRARYPATH%"
 export HOME=$(grep -e "^${USER:-root}:" /etc/passwd | cut -d ":" -f 6)
 export HOME=${HOME:-/root}
 export PS1='\u@\h:\w\$ '

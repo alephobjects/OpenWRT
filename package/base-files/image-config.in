@@ -110,9 +110,24 @@ menuconfig INITOPT
 	config TARGET_INIT_PATH
 		string
 		prompt "PATH for regular boot" if INITOPT
-		default "/usr/sbin:/usr/bin:/sbin:/bin"
+		default "/usr/sbin:/usr/bin:/sbin:/bin:/mnt/sdcard/usr/sbin:/mnt/sdcard/usr/bin:/mnt/sdcard/sbin:/mnt/sdcard/bin"
 		help
 			Default PATH used during normal operation
+
+	config TARGET_PYTHON_PATH
+		string
+		prompt "PATH for python istallation" if INITOPT
+		default "/mnt/sdcard/lib/python"
+		help
+			PATH for python installation
+
+	config TARGET_LDLIB_PATH
+		string 
+		prompt "Path for dynamic linked libraries" if INITOPT
+		default "/lib:/usr/lib:/mnt/sdcard/lib:/mnt/sdcard/usr/lib"
+		help
+			PATH for dynamic library linker.
+	
 
 	config TARGET_INIT_ENV
 		string
