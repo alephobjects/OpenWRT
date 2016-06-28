@@ -648,6 +648,18 @@ define AddDepends/usb-serial
   DEPENDS+=kmod-usb-serial $(1)
 endef
 
+define  KernelPackage/usb-serial-acm
+  TITLE:=Support for USB Modem (CDC ACM)
+  KCONFIG:=CONFIG_USB_ACM
+  FILES:=$(LINUX_DIR)/drivers/usb/class/cdc-acm.ko
+  AUTOLOAD:=$(call AutoProbe,cdc-acm)
+endef
+
+define  KernelPackage/usb-serial-acm/description
+  Kernel support for USB Modems, used for serial communications.
+endef
+
+$(eval $(call KernelPackage,usb-serial-acm))
 
 define KernelPackage/usb-serial-belkin
   TITLE:=Support for Belkin devices
