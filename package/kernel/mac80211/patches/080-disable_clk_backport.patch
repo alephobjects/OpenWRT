@@ -1,9 +1,9 @@
 --- a/compat/compat-3.6.c
 +++ b/compat/compat-3.6.c
-@@ -147,17 +147,3 @@ int sg_alloc_table_from_pages(struct sg_
- 	return 0;
- }
- EXPORT_SYMBOL_GPL(sg_alloc_table_from_pages);
+@@ -11,17 +11,3 @@ int sg_alloc_table_from_pages(struct sg_
+ #include <linux/module.h>
+ #include <linux/export.h>
+ #include <linux/clk.h>
 -
 -/* whoopsie ! */
 -#ifndef CONFIG_COMMON_CLK
