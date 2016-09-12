@@ -458,12 +458,16 @@ static void ag71xx_hw_setup(struct ag71xx *ag)
 
 	if (pdata->mii_bus_dev && ag->pdev->id == 0) {
 		mpdata = pdata->mii_bus_dev->platform_data;
-		if (mpdata && mpdata->builtin_switch)
-		    init |= MAC_CFG1_TFC | MAC_CFG1_RFC;
+		if (mpdata && mpdata->builtin_switch){
+			init |= MAC_CFG1_TFC | MAC_CFG1_RFC;
+			printk("ag71xx_hw_setup: Built-in switch detected\n");
+		}
 	}
 
 	/* setup MAC configuration registers */
-	ag71xx_wr(ag, AG71XX_REG_MAC_CFG1, init);
+	// ag71xx_wr(ag, AG71XX_REG_MAC_CFG1, init);
+	// It seems that built-in switch causes problems, therefore revert back to STD INIT
+	ag71xx_wr(ag, AG71XX_REG_MAC_CFG1, MAC_CFG1_INIT);
 
 	ag71xx_sb(ag, AG71XX_REG_MAC_CFG2,
 		  MAC_CFG2_PAD_CRC_EN | MAC_CFG2_LEN_CHECK);
